@@ -5,21 +5,18 @@ private:
 	double x, y, z;
 
 public: 
-	Vector(double Vx, double Vy, double Vz) {
-		this->x = Vx;
-		this->y = Vy;
-		this->z = Vz;
-	};
-	Vector(Point3D start, Point3D end) {
-		Point3D asPoint = end - start;
-		x = asPoint.getX();
-		y = asPoint.getY();
-		z = asPoint.getZ();
-	};
-	Vector(Point3D fromPoint) {
-		this->x = fromPoint.getX();
-		this->y = fromPoint.getY();
-		this->z = fromPoint.getZ();
+	Vector(double Vx, double Vy, double Vz);
+	Vector(Point3D start, Point3D end);
+	Vector(Point3D fromPoint);
+
+	//Methods
+	Vector cross(const Vector& other) const;
+	inline static Vector cross(const Vector& vec1, const Vector& vec2) {
+		return vec1.cross(vec2);
+	}
+	double dot(const Vector& other) const;
+	inline static double dot(const Vector& vec1, const Vector& vec2) {
+		return vec1.dot(vec2);
 	}
 
 	//Operators
