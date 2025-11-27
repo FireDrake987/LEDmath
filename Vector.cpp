@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Vector.h"
 
 Vector::Vector(double Vx, double Vy, double Vz) {

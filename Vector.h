@@ -23,11 +23,29 @@ public:
 	inline Vector operator+(const Vector& other) const {
 		return Vector(asPoint() + other.asPoint());
 	}
+	inline Vector operator+=(const Vector& other) {
+		this->x = this->getX() + other.x;
+		this->y = this->getY() + other.y;
+		this->z = this->getZ() + other.z;
+		return Vector(this->x, this->y, this->z);
+	}
 	inline Vector operator-(const Vector& other) const {
 		return Vector(asPoint() - other.asPoint());
 	}
+	inline Vector operator-=(const Vector& other) {
+		this->x = this->getX() - other.x;
+		this->y = this->getY() - other.y;
+		this->z = this->getZ() - other.z;
+		return Vector(this->x, this->y, this->z);
+	}
 	inline Vector operator*(const int& scalar) const {
 		return Vector(asPoint() * scalar);
+	}
+	inline Vector operator*=(const int& other) {
+		this->x = this->getX() * other;
+		this->y = this->getY() * other;
+		this->z = this->getZ() * other;
+		return Vector(this->x, this->y, this->z);
 	}
 	inline friend Vector operator*(const int& scalar, const Vector& vector) {
 		return Vector(vector.asPoint() * scalar);
@@ -35,8 +53,23 @@ public:
 	inline Vector operator/(const int& scalar) const {
 		return Vector(asPoint() / scalar);
 	}
+	inline Vector operator/=(const int& scalar) {
+		this->x = this->getX() / scalar;
+		this->y = this->getY() / scalar;
+		this->z = this->getZ() / scalar;
+	}
+	inline friend std::ostream& operator<<(std::ostream& os, const Vector& vec) {
+		os << vec.x << "i+" << vec.y << "j+" << vec.z << "k";
+		return os;
+	}
+	inline bool operator==(const Vector& other) {
+		return (getX() == other.getX() && getY() == other.getY() && getZ() == other.getZ());
+	}
+	inline bool operator!=(const Vector & other) {
+		return !(*this == other);
+	}
 
-	//Get methods
+	//Get Methods
 	inline double getX() const {
 		return this->x;
 	};
