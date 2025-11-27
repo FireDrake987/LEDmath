@@ -4,27 +4,48 @@ class Quaternion {
 private: 
 	double w, x, y, z;
 public: 
-	Quaternion(double w, double x, double y, double z);
-	Quaternion(double w, Vector vec);
-
+	Quaternion(double w, double x, double y, double z) {
+		this->w = w;
+		this->x = x;
+		this->y = y;
+		this->z = z;
+	}
+	Quaternion(double w, Vector vec) {
+		this->w = w;
+		this->x = vec.getX ( );
+		this->y = vec.getY ( );
+		this->z = vec.getZ ( );
+	}
 	//Methods
 
 	//Operators
 	inline Quaternion operator*(const Quaternion& other) const {
-		return Quaternion(this->w*other.w - this->x*other.x - this->y*other.y - this->z*other.z, this->w*other.x+this->x*other.w+this->y*other.z-this->z*other.y, this->w*other.y+this->x*other.z+this->y*other.w-this->z*other.x, this->w*other.z+this->x*other.y-this->y*other.x+this->z*other.w);
+		return Quaternion(
+			this->getW() * other.getW() - this->getX() * other.getX() - this->getY() * other.getY() - this->getZ() * other.getZ(), 
+			this->getW() * other.getX() + this->getX() * other.getW() + this->getY() * other.getZ() - this->getZ() * other.getY(), 
+			this->getW() * other.getY() - this->getX() * other.getZ() + this->getY() * other.getW() + this->getZ() * other.getX(), 
+			this->getW() * other.getZ() + this->getX() * other.getY() - this->getY() * other.getX() + this->getZ() * other.getW()
+		);
+	}
+	inline friend std::ostream& operator<<(std::ostream& os, const Quaternion& quaternion) {
+		os << quaternion.getW() << (quaternion.getX() < 0 ? "" : "+") << quaternion.getX() << "i" << (quaternion.getY() < 0 ? "" : "+") << quaternion.getY() << "j" << (quaternion.getZ() < 0 ? "" : "+") << quaternion.getZ() << "k";
+		return os;
+	}
+	inline bool operator==(const Quaternion& other) const {
+		return (getW() == other.getW() && getX() == other.getX() && getY() == other.getY() && getZ() == other.getZ());
 	}
 
 	//Get Methods
-	inline double getW() {
+	inline double getW() const {
 		return this->w;
 	}
-	inline double getX() {
+	inline double getX() const {
 		return this->x;
 	}
-	inline double getY() {
+	inline double getY() const {
 		return this->y;
 	}
-	inline double getZ() {
+	inline double getZ() const {
 		return this->z;
 	}
 };

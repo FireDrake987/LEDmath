@@ -59,7 +59,7 @@ public:
 		this->z = this->getZ() / scalar;
 	}
 	inline friend std::ostream& operator<<(std::ostream& os, const Vector& vec) {
-		os << vec.x << "i+" << vec.y << "j+" << vec.z << "k";
+		os << vec.getX() << "i" << (vec.getY() < 0 ? "" : "+") << vec.getY() << "j" << (vec.getZ() < 0 ? "" : "+") << vec.getZ() << "k";
 		return os;
 	}
 	inline bool operator==(const Vector& other) {
