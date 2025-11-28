@@ -12,11 +12,31 @@ public:
 	}
 	Quaternion(double w, Vector vec) {
 		this->w = w;
-		this->x = vec.getX ( );
-		this->y = vec.getY ( );
-		this->z = vec.getZ ( );
+		this->x = vec.getX();
+		this->y = vec.getY();
+		this->z = vec.getZ();
+	}
+	Quaternion(Vector vec) {
+		this->x = vec.getX();
+		this->y = vec.getY();
+		this->z = vec.getZ();
 	}
 	//Methods
+	inline Quaternion conjugate() const {
+		return Quaternion(getW(), -getX(), -getY(), -getZ());
+	}
+	inline static Point3D apply(const Point3D& point, const Quaternion& qua) {
+		const Quaternion normQua = qua.norm();
+		Quaternion endQua = normQua * Quaternion(point) * normQua.conjugate();
+		return Point3D(qua.getX(), qua.getY(), qua.getZ());
+	}
+	inline Point3D apply(const Point3D& point) const {
+		return apply(point, *this);
+	}
+	inline Quaternion norm() const {
+		double sum = sqrt(getW()*getW() + getX()*getX() + getY()*getY() + getZ()*getZ() );
+		return Quaternion(getW()/sum, getX()/sum, getY()/sum, getZ()/sum);
+	}
 
 	//Operators
 	inline Quaternion operator*(const Quaternion& other) const {

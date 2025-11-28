@@ -18,6 +18,10 @@ public:
 	inline static double dot(const Vector& vec1, const Vector& vec2) {
 		return vec1.dot(vec2);
 	}
+	inline Vector norm() const {
+		double sum = getX() + getY() + getZ();
+		return Vector(getX()/sum, getY()/sum, getZ()/sum);
+	}
 
 	//Operators
 	inline Vector operator+(const Vector& other) const {
