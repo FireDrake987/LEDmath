@@ -4,36 +4,25 @@ class Quaternion {
 private: 
 	double w, x, y, z;
 public: 
-	Quaternion(double w, double x, double y, double z) {
-		this->w = w;
-		this->x = x;
-		this->y = y;
-		this->z = z;
-	}
-	Quaternion(double w, Vector vec) {
-		this->w = w;
-		this->x = vec.getX();
-		this->y = vec.getY();
-		this->z = vec.getZ();
-	}
-	Quaternion(Vector vec) {
-		this->x = vec.getX();
-		this->y = vec.getY();
-		this->z = vec.getZ();
-	}
+	Quaternion(double w, double x, double y, double z);
+	Quaternion(double w, Vector vec);
+	Quaternion(Vector vec);
 	//Methods
 	inline Quaternion conjugate() const {
 		return Quaternion(getW(), -getX(), -getY(), -getZ());
 	}
 	inline static Point3D apply(const Point3D& point, const Quaternion& qua) {
-		const Quaternion normQua = qua.norm();
-		Quaternion endQua = normQua * Quaternion(point) * normQua.conjugate();
-		return Point3D(qua.getX(), qua.getY(), qua.getZ());
+		return apply(Quaternion(point), qua);
+	}
+	inline static Point3D apply(const Quaternion& point, const Quaternion& qua) {
+		const Quaternion normQua = qua.normalize();
+		Quaternion endQua = normQua * point * normQua.conjugate();
+		return Point3D(endQua.getX(), endQua.getY(), endQua.getZ());
 	}
 	inline Point3D apply(const Point3D& point) const {
 		return apply(point, *this);
 	}
-	inline Quaternion norm() const {
+	inline Quaternion normalize() const {
 		double sum = sqrt(getW()*getW() + getX()*getX() + getY()*getY() + getZ()*getZ() );
 		return Quaternion(getW()/sum, getX()/sum, getY()/sum, getZ()/sum);
 	}

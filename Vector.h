@@ -10,15 +10,23 @@ public:
 	Vector(Point3D fromPoint);
 
 	//Methods
-	Vector cross(const Vector& other) const;
+	inline Vector cross(const Vector& other) const {
+		return Vector(this->getY() * other.getZ() - this->getZ() * other.getY(), this->getX() * other.getZ() - this->getZ() * other.getX(), this->getX() * other.getY() - this->getY() * other.getX());
+	}
+
 	inline static Vector cross(const Vector& vec1, const Vector& vec2) {
 		return vec1.cross(vec2);
 	}
-	double dot(const Vector& other) const;
+
+	inline double dot(const Vector& other) const {
+		return this->getX() * other.getX() + this->getY() * other.getY() + this->getZ() * other.getZ();
+	}
+
 	inline static double dot(const Vector& vec1, const Vector& vec2) {
 		return vec1.dot(vec2);
 	}
-	inline Vector norm() const {
+
+	inline Vector normalize() const {
 		double sum = getX() + getY() + getZ();
 		return Vector(getX()/sum, getY()/sum, getZ()/sum);
 	}

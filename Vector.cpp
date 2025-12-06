@@ -17,11 +17,3 @@ Vector::Vector(Point3D fromPoint) {
 	this->y = fromPoint.getY();
 	this->z = fromPoint.getZ();
 }
-
-Vector Vector::cross(const Vector& other) const {
-	return Vector(this->getY() * other.getZ() - this->getZ() * other.getY(), this->getX() * other.getZ() - this->getZ() * other.getX(), this->getX() * other.getY() - this->getY() * other.getX());
-}
-
-double Vector::dot(const Vector& other) const {
-	return this->getX() * other.getX() + this->getY() * other.getY() + this->getZ() * other.getZ();
-}
