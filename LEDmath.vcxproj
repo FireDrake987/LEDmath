@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h" />
+    <ClInclude Include="LEDmath\framework.h" />
     <ClInclude Include="LEDmath\LEDmath.h" />
     <ClInclude Include="LEDmath\pch.h" />
     <ClInclude Include="LEDmath\Point3D.h" />
