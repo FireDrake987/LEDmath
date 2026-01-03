@@ -43,6 +43,9 @@ public:
 	inline bool operator==(const Quaternion& other) const {
 		return (getW() == other.getW() && getX() == other.getX() && getY() == other.getY() && getZ() == other.getZ());
 	}
+	inline bool operator!=(const Quaternion& other) {
+		return !(*this == other);
+	}
 
 	//Get Methods
 	inline double getW() const {
