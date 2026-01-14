@@ -15,39 +15,39 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="LEDmath\LEDmath.h">
+    <ClInclude Include="framework.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LEDmath\pch.h">
+    <ClInclude Include="LEDmath.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LEDmath\Point3D.h">
+    <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LEDmath\Quaternion.h">
+    <ClInclude Include="Point3D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LEDmath\Vector.h">
+    <ClInclude Include="Quaternion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LEDmath\framework.h">
+    <ClInclude Include="Vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LEDmath\LEDmath.cpp">
+    <ClCompile Include="LEDmath.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LEDmath\pch.cpp">
+    <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LEDmath\Point3D.cpp">
+    <ClCompile Include="Point3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LEDmath\Quaternion.cpp">
+    <ClCompile Include="Quaternion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LEDmath\Vector.cpp">
+    <ClCompile Include="Vector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
