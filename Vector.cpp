@@ -17,3 +17,8 @@ Vector::Vector(Point3D fromPoint) {
 	this->y = fromPoint.getY();
 	this->z = fromPoint.getZ();
 }
+Vector::Vector() {
+	this->x = 0;
+	this->y = 0;
+	this->z = 0;
+}
