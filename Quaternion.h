@@ -24,8 +24,11 @@ public:
 	inline Point3D apply(const Point3D& point) const {
 		return apply(point, *this);
 	}
+	inline double magnitude() const {
+		return sqrt(getW() * getW() + getX() * getX() + getY() * getY() + getZ() * getZ());
+	}
 	inline Quaternion normalize() const {
-		double sum = sqrt(getW()*getW() + getX()*getX() + getY()*getY() + getZ()*getZ() );
+		double sum = magnitude();
 		return Quaternion(getW()/sum, getX()/sum, getY()/sum, getZ()/sum);
 	}
 

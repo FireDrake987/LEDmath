@@ -27,8 +27,11 @@ public:
 		return vec1.dot(vec2);
 	}
 
+	inline double magnitude() const {
+		return sqrt(getX() * getX() + getY() * getY() + getZ() * getZ());
+	}
 	inline Vector normalize() const {
-		double sum = getX() + getY() + getZ();
+		double sum = magnitude();
 		return Vector(getX()/sum, getY()/sum, getZ()/sum);
 	}
 
