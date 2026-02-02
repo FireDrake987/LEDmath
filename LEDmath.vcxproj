@@ -36,6 +36,13 @@
     <ClCompile Include="Quaternion.cpp" />
     <ClCompile Include="Vector.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Library Include="x64\Debug\LEDmath.lib" />
+    <Library Include="x64\Release\LEDmath.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="LICENSE.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
