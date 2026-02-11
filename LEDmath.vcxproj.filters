@@ -52,10 +52,14 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="x64\Release\LEDmath.lib" />
-    <Library Include="x64\Debug\LEDmath.lib" />
+    <Text Include="LICENSE.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="LICENSE.txt" />
+    <Library Include="x64\Release\LEDmath.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="x64\Debug\LEDmath.lib">
+      <Filter>Source Files</Filter>
+    </Library>
   </ItemGroup>
 </Project>
