@@ -1,0 +1,33 @@
+\doxysection{Quaternion.\+cpp}
+\hypertarget{_quaternion_8cpp_source}{}\label{_quaternion_8cpp_source}\index{G:/LEDmath/Quaternion.cpp@{G:/LEDmath/Quaternion.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}pch.h"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Quaternion.h"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ Quaternion::Quaternion(\textcolor{keywordtype}{double}\ w,\ \textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ z)\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ this-\/>w\ =\ w;}
+\DoxyCodeLine{00006\ \ \ \ \ this-\/>x\ =\ x;}
+\DoxyCodeLine{00007\ \ \ \ \ this-\/>y\ =\ y;}
+\DoxyCodeLine{00008\ \ \ \ \ this-\/>z\ =\ z;}
+\DoxyCodeLine{00009\ \}}
+\DoxyCodeLine{00010\ Quaternion::Quaternion(\textcolor{keywordtype}{double}\ w,\ \doxymbox{\hyperlink{class_vector}{Vector}}\ vec)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ this-\/>w\ =\ w;}
+\DoxyCodeLine{00012\ \ \ \ \ this-\/>x\ =\ vec.getX();}
+\DoxyCodeLine{00013\ \ \ \ \ this-\/>y\ =\ vec.getY();}
+\DoxyCodeLine{00014\ \ \ \ \ this-\/>z\ =\ vec.getZ();}
+\DoxyCodeLine{00015\ \}}
+\DoxyCodeLine{00016\ Quaternion::Quaternion(\doxymbox{\hyperlink{class_vector}{Vector}}\ vec)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ this-\/>x\ =\ vec.getX();}
+\DoxyCodeLine{00018\ \ \ \ \ this-\/>y\ =\ vec.getY();}
+\DoxyCodeLine{00019\ \ \ \ \ this-\/>z\ =\ vec.getZ();}
+\DoxyCodeLine{00020\ \ \ \ \ this-\/>w\ =\ 0;}
+\DoxyCodeLine{00021\ \}}
+\DoxyCodeLine{00022\ Quaternion::Quaternion()\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ this-\/>x\ =\ 0;}
+\DoxyCodeLine{00024\ \ \ \ \ this-\/>y\ =\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ this-\/>z\ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \ \ this-\/>w\ =\ 1;}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}
