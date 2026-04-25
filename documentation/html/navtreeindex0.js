@@ -1,0 +1,19 @@
+var NAVTREEINDEX0 =
+{
+"_l_e_dmath_8h_source.html":[1,0,0,1],
+"_point3_d_8h_source.html":[1,0,0,3],
+"_quaternion_8cpp_source.html":[1,0,0,4],
+"_quaternion_8h_source.html":[1,0,0,5],
+"_vector_8h_source.html":[1,0,0,6],
+"annotated.html":[0,0],
+"class_point3_d.html":[0,0,0],
+"class_quaternion.html":[0,0,1],
+"class_vector.html":[0,0,2],
+"classes.html":[0,1],
+"dir_dadfa597e7d0e5d9c9eac67c99e83617.html":[1,0,0],
+"files.html":[1,0],
+"framework_8h_source.html":[1,0,0,0],
+"index.html":[],
+"pages.html":[],
+"pch_8h_source.html":[1,0,0,2]
+};
